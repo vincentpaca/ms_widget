@@ -1,0 +1,8 @@
+{
+  "name": "my_widget",
+  "private": true,
+  "dependencies": {
+    "bulma": "^0.7.1",
+    "vue": "^2.5.16"
+  }
+}

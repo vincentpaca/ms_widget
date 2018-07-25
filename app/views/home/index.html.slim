@@ -1,0 +1,66 @@
+.container.calculator
+  .calculator-fields
+    .field
+      label.label.is-large How much do you need for your Travel Goals?
+      .control
+        .field.has-addons
+          .control
+            .button.is-static.is-large $
+          .control
+            input.input.is-large.is-primary[type="text" placeholder="10000" v-model="amount"]
+            p.error[v-if="!this.amount"] Amount is required
+
+
+    .field
+      label.label.is-large How many months do you have to save?
+      .control
+        .field
+          .range-slider
+            input.range-slider__range[step="1" type="range" min="0" max="24" v-model="months" v-on:change="calculateMonthly()"]
+            span.range-slider__value
+              |
+                {{this.months}} month(s)
+
+    .field.is-centered
+      label.label.is-large You should set aside
+      .control
+        .field
+          .range-slider
+            input.range-slider__range[step="100" type="range" min="0" max="10000" v-model="monthlySavings" v-on:change="calculateMonths()"]
+        .title.has-text-success
+          |
+            $ {{this.monthlySavings}} per month
+
+    .box
+      .content
+        .title.is-5 Receive up to 10,000 welcome miles
+      .content
+        ul
+          li 6 miles per S$1 spend on major airlines and hotel booked through Expedia, UOB Travel and Agoda
+          li 2.4 miles per S$1 spend overseas and 1.4 miles per S$1 spent locally
+          li 20,000 loyalty miles per year; Complimentary transfers to Changi Airport (UOB PRVI Miles American Express Card)
+      .content
+        button.button.is-primary Apply Now
+
+
+
+javascript:
+    new Vue({
+        el: '.calculator',
+        data: {
+            errors: [],
+            amount: null,
+            months: 1,
+            monthlySavings: 0
+        },
+        methods: {
+            calculateMonthly: function() {
+                monthlySavings = this.amount / this.months;
+                this.monthlySavings = monthlySavings.toFixed(2);
+            },
+            calculateMonths: function() {
+                months = this.amount / this.monthlySavings;
+                this.months = months.toFixed(2);
+            }
+        }
+    });
