@@ -4,7 +4,7 @@
         "&min_amount=" + MoneySmartWidgetConfig.min_amount +
         "&max_amount=" + MoneySmartWidgetConfig.max_amount +
         "&min_months=" + MoneySmartWidgetConfig.min_months +
-        "&max_months=" + MoneySmartWidgetConfig.max_months +;
+        "&max_months=" + MoneySmartWidgetConfig.max_months +
         "&amount_placeholder=" + MoneySmartWidgetConfig.amount_placeholder;
 
     // Append the iFrame
