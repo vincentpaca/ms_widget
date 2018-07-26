@@ -6,16 +6,15 @@
         .control
           .button.is-static.is-large $
         .control
-          input.input.is-large.is-primary[type="text" placeholder="10000" v-model="amount" autofocus]
-          p.error[v-if="!this.amount"] Amount is required
-
+          input.input.is-large.is-primary[type="text" placeholder="#{@amount_placeholder}" v-model="amount" autofocus]
+          p.error[v-if="!this.amount"] You need to fill this in
 
   .field
     label.label.is-large How many months do you have to save?
     .control
       .field
         .range-slider
-          input.range-slider__range[step="1" type="range" min="0" max="24" v-model="months" v-on:change="calculateMonthly()"]
+          input.range-slider__range[step="1" type="range" min="#{@min_months}" max="#{@max_months}" v-model="months" v-on:change="calculateMonthly()"]
           span.range-slider__value
             |
               {{this.months}} month(s)
@@ -25,7 +24,7 @@
     .control
       .field
         .range-slider
-          input.range-slider__range[step="100" type="range" min="0" max="10000" v-model="monthlySavings" v-on:change="calculateMonths()"]
+          input.range-slider__range[step="100" type="range" min="#{@min_amount}" max="#{@max_amount}" v-model="monthlySavings" v-on:change="calculateMonths()"]
       .title.has-text-success
         |
           $ {{this.monthlySavings}} per month

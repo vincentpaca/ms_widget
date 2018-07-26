@@ -7,7 +7,15 @@
     ```
     <!--start of MoneySmart Widget code-->
       <script type='text/javascript'>
-        var ms_widget_type = 'travel';
+        var MoneySmartWidgetConfig = {
+          widget_type: 'travel',
+          amount_placeholder: 5000,
+          min_months: 1,
+          max_months: 24,
+          min_amount: 0,
+          max_amount: 10000
+        };
+              
         (function(){
           var ms = document.createElement('script'); 
           ms.type = 'text/javascript'; 
