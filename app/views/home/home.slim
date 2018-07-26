@@ -1,0 +1,5 @@
+.container.calculator
+  = render partial: 'calculator'
+
+- action = %w(articles).sample
+= render partial: "action_boxes/home/#{action}"

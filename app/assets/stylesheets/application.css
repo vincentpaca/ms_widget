@@ -33,3 +33,11 @@ body {
     font-size: 0.75em;
     color: #af0d00;
 }
+
+.cta-to-offers {
+    margin-top: 12px;
+}
+
+.cta-button {
+    background-color: #F55335!important;
+}
