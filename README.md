@@ -27,5 +27,5 @@
     <!--end of MoneySmart Widget code-->
     ```
 
-2. Add this div `<div id='moneysmart_widget'></div>` to a location where you want the widget to show up.
+2. Add this div `<div id='moneysmart-fp-widget'></div>` to a location where you want the widget to show up.
 3. That's it!
